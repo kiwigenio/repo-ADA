@@ -58,4 +58,32 @@ std::vector<int>generar_vector(int size_vector){
     }
     return vector;
 }
+// verificacion de las 100 pruebas
+void verificacion(){ 
+    int total_pruebas  = 100; 
+    int verificado = true; 
 
+    for(int i = 0 ; i<= total_pruebas; i++ ){ 
+        int tamanio= 10 + (rand() % 31);
+        std::vector<int> muestra = generar_vector(tamanio);
+        int resultado_cubico = costo_cubico(muestra, tamanio);
+        int resultado_cuadratica = costo_cuadratica(muestra, tamanio);
+        int resultado_kadane = costo_kadane(muestra, tamanio);
+
+        if (resultado_cubico != resultado_cuadratica || resultado_cuadratica != resultado_kadane){
+            std::cout<< "resultado cubico: " << resultado_cubico 
+            << " resultado cuadratica: " << resultado_cuadratica
+            << " resultado kadane: " << resultado_kadane << std::endl;
+            verificado = false;
+            break;
+        }
+    }
+    if (total_pruebas){
+        std::cout<<"salio bien :) " << std::endl;
+    }
+}
+
+int main (){
+    verificacion();
+    return 0; 
+}
