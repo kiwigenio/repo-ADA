@@ -83,7 +83,18 @@ void verificacion(){
     }
 }
 
+std::vector<int> generar_vector_grande(int size_vector){
+    std::vector<int> vector(size_vector);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(-100, 100);
+    for(int i =0 ;i <size_vector; i++){
+        vector[i] = dis(gen);
+    }
+    return vector; 
+}
+
 int main (){
     verificacion();
-    return 0; 
+    return 0;
 }
