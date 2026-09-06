@@ -53,3 +53,13 @@ Tiempo de ejecucion: 831 ms
 | **Kadane** | $O(n)$ | $\approx 660\text{ ms}$ ($0.66\text{ s}$) | **$831\text{ ms}$ ($0.83\text{ s}$)** | **Sí** ($< 1\text{ min}$) |
 
 > **Conclusión:** El tiempo experimental obtenido ($831\text{ ms}$) valida el comportamiento lineal $O(n)$ de Kadane, manteniéndose en el mismo orden de magnitud estimado ($\approx 660\text{ ms}$) y finalizando ampliamente por debajo del límite de 1 minuto.
+
+---
+
+## Entorno de Pruebas
+
+* **Lenguaje:** C++
+* **Compilador:** `g++` (Rev5, Built by MSYS2 project) 16.1.0
+* **Procesador:** 12th Gen Intel(R) Core(TM) i5-12450H
+* **Memoria RAM:** 16 GB
+* **Sistema Operativo:** Windows
