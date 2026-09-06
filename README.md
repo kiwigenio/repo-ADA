@@ -32,3 +32,24 @@ $$T(10^8) = 0.19688\text{ s} \times (12\,500)^2 \approx 30\,762\,500\text{ s} \a
 $$T(10^8) = 0.000053\text{ s} \times 12\,500 \approx \mathbf{0.66\text{ s}} \quad (660\text{ ms})$$
 
 > **Conclusión:** Solo el algoritmo de Kadane termina en menos de 1 minuto ($< 60\text{ s}$). Por tanto, es el único viable para ejecutarse a esta escala.
+---
+
+## Prueba de $10^8$ datos
+
+De acuerdo con las estimaciones previas, el único algoritmo capaz de finalizar en menos de un minuto es **Kadane ($O(n)$)**. Se ejecutó la prueba con $n = 10^8$ (100 millones de elementos) sobre el arreglo generado aleatoriamente.
+
+```text
+prueba con vector grande 10^8 usando kadane
+Mejor suma: 955803
+Tiempo de ejecucion: 831 ms
+```
+
+### Comparación: Predicho vs. Medido
+
+| Algoritmo | Complejidad | Tiempo predicho | Tiempo medido real | ¿Cumplió la estimación? |
+|---|---|---|---|---|
+| **Cúbica** | $O(n^3)$ | $\approx 19.2$ millones de años | — (Descartado) | — |
+| **Cuadrática** | $O(n^2)$ | $\approx 356$ días | — (Descartado) | — |
+| **Kadane** | $O(n)$ | $\approx 660\text{ ms}$ ($0.66\text{ s}$) | **$831\text{ ms}$ ($0.83\text{ s}$)** | **Sí** ($< 1\text{ min}$) |
+
+> **Conclusión:** El tiempo experimental obtenido ($831\text{ ms}$) valida el comportamiento lineal $O(n)$ de Kadane, manteniéndose en el mismo orden de magnitud estimado ($\approx 660\text{ ms}$) y finalizando ampliamente por debajo del límite de 1 minuto.
